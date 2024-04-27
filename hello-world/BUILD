@@ -21,12 +21,17 @@ cc_binary(
         "-s ASSERTIONS=1",
         "--bind",
         "-s STANDALONE_WASM=0", # generates only wasm file, not .js file? generates independent wasm, but missing utilities of js
-        # "--preload-file ../mediapipe/assets@assets",
+
+        # face detection
         "--preload-file ../mediapipe/mediapipe/modules/face_detection/face_detection_short_range.tflite@mediapipe/modules/face_detection/face_detection_short_range.tflite",
-        # "--preload-file ../mediapipe/mediapipe/@mediapipe/",
+        # selfie segmentation
         "--preload-file ../mediapipe/mediapipe/modules/selfie_segmentation/selfie_segmentation.tflite@mediapipe/modules/selfie_segmentation/selfie_segmentation.tflite",
         "--preload-file ../mediapipe/mediapipe/modules/selfie_segmentation/selfie_segmentation_landscape.tflite@mediapipe/modules/selfie_segmentation/selfie_segmentation_landscape.tflite",
+        # face mesh
         "--preload-file ../mediapipe/mediapipe/modules/face_landmark/face_landmark.tflite@mediapipe/modules/face_landmark/face_landmark.tflite",
+        # hair segmentation
+       "--preload-file ../mediapipe/mediapipe/modules/hair_segmentation/hair_segmentation.tflite@mediapipe/modules/hair_segmentation/hair_segmentation.tflite",
+
     ],
     visibility = ["//visibility:public"],
     deps = [
@@ -50,9 +55,11 @@ cc_binary(
         # selfie segmentation
         "//mediapipe/modules/selfie_segmentation:selfie_segmentation_gpu",
         "//mediapipe/graphs/selfie_segmentation:selfie_segmentation_gpu_deps",
-        # # face mesh
+        # face mesh
         "//mediapipe/calculators/core:constant_side_packet_calculator",
         "//mediapipe/graphs/face_mesh/subgraphs:face_renderer_gpu",
         "//mediapipe/modules/face_landmark:face_landmark_front_gpu",
+        # hair segmentation
+       "//mediapipe/modules/hair_segmentation:hair_segmentation_gpu",
     ],
 )
