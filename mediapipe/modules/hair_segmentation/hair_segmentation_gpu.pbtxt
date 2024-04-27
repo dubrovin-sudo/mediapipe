@@ -1,10 +1,10 @@
-# MediaPipe graph that performs hair segmentation with TensorFlow Lite on CPU.
-# Used in the example in
-# mediapipie/examples/desktop/hair_segmentation:hair_segmentation_cpu
+type: "HairSegmentationGpu"
 
-# Images on CPU coming into and out of the graph.
-input_stream: "input_video"
-output_stream: "output_video"
+# GPU image. (GpuBuffer)
+input_stream: "IMAGE:image"
+
+# Segmentation mask. (GpuBuffer in RGBA, with the same mask values in R and A)
+output_stream: "SEGMENTATION_MASK:segmentation_mask"
 
 # Throttles the images flowing downstream for flow control. It passes through
 # the very first incoming image unaltered, and waits for
