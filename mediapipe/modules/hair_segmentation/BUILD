@@ -59,7 +59,7 @@ mediapipe_simple_subgraph(
     graph = "hair_segmentation_gpu.pbtxt",
     register_as = "HairSegmentationGpu",
     deps = [
-        "//mediapipe/calculators/core:flow_limiter_calculator",
+#        "//mediapipe/calculators/core:flow_limiter_calculator",
         "//mediapipe/calculators/core:previous_loopback_calculator",
 #        "//mediapipe/calculators/image:image_transformation_calculator", # fatal error: 'opencv2/core/version.hpp' file not found
         "//mediapipe/calculators/image:recolor_calculator",
