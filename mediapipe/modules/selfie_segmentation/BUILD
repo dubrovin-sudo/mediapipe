@@ -56,9 +56,9 @@ mediapipe_simple_subgraph(
     deps = [
         ":selfie_segmentation_model_loader",
         "//mediapipe/calculators/image:image_properties_calculator",
-        "//mediapipe/calculators/tensor:image_to_tensor_calculator",
+        "//mediapipe/calculators/tensor:image_to_tensor_calculator", #opencv
         "//mediapipe/calculators/tensor:inference_calculator",
-        "//mediapipe/calculators/tensor:tensors_to_segmentation_calculator",
+        "//mediapipe/calculators/tensor:tensors_to_segmentation_calculator", #opencv
         "//mediapipe/calculators/tflite:tflite_custom_op_resolver_calculator",
         "//mediapipe/calculators/util:from_image_calculator",
         "//mediapipe/framework/tool:switch_container",
