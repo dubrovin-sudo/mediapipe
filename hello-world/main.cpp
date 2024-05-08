@@ -492,12 +492,11 @@ class GraphContainer {
           output_stream: "SEGMENTATION_MASK:segmentation_mask"
         }
 
-//        node {
-//          calculator: "HairSegmentationGpu"
-////          input_side_packet: "MODEL_SELECTION:model_selection"
-//          input_stream: "IMAGE:throttled_input_video"
-//          output_stream: "SEGMENTATION_MASK:segmentation_mask"
-//        }
+#        node {
+#          calculator: "HairSegmentationGpu"
+#          input_stream: "IMAGE:throttled_input_video"
+#          output_stream: "SEGMENTATION_MASK:segmentation_mask"
+#        }
 
         #node {
         #  calculator: "RecolorCalculator"

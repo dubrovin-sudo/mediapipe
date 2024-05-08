@@ -30,7 +30,7 @@ cc_binary(
         # face mesh
         "--preload-file ../mediapipe/mediapipe/modules/face_landmark/face_landmark.tflite@mediapipe/modules/face_landmark/face_landmark.tflite",
         # hair segmentation
-       "--preload-file ../mediapipe/mediapipe/modules/hair_segmentation/hair_segmentation.tflite@mediapipe/modules/hair_segmentation/hair_segmentation.tflite",
+        "--preload-file ../mediapipe/mediapipe/modules/hair_segmentation/hair_segmentation.tflite@mediapipe/modules/hair_segmentation/hair_segmentation.tflite",
 
     ],
     visibility = ["//visibility:public"],
@@ -60,6 +60,6 @@ cc_binary(
         "//mediapipe/graphs/face_mesh/subgraphs:face_renderer_gpu",
         "//mediapipe/modules/face_landmark:face_landmark_front_gpu",
         # hair segmentation
-       "//mediapipe/modules/hair_segmentation:hair_segmentation_gpu",
+        "//mediapipe/modules/hair_segmentation:hair_segmentation_gpu",
     ],
 )
